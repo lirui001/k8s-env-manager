@@ -63,29 +63,124 @@ K8s Manager Desktop 是一个专为 DevOps 工程师和运维人员设计的桌�
 
 ## 安装
 
-### macOS
+### 快速下载
 
-#### 直接下载安装包（推荐）
+前往 [Releases 页面](https://github.com/lirui001/k8s-env-manager/releases/latest)下载适合你系统的安装包：
 
-1. 前往 [Releases](https://github.com/lirui001/k8s-env-manager/releases) 页面
-2. 下载适合你 Mac 架构的 DMG 文件：
-   - **Apple Silicon (M1/M2/M3)**：`K8s Manager-1.0.0-arm64.dmg`
-   - **Intel**：`K8s Manager-1.0.0-x64.dmg`
-3. 打开 DMG 文件
-4. 将 `K8s Manager` 拖拽到 `Applications` 文件夹
-5. 首次打开时，如果遇到安全提示：
-   - 打开 `系统偏好设置` > `安全性与隐私`
-   - 点击 "仍要打开"
-   - 或在终端执行：
-     ```bash
-     xattr -cr /Applications/K8s\ Manager.app
-     ```
+| 平台 | 架构 | 下载文件 | 大小 |
+|------|------|----------|------|
+| **macOS** | Apple Silicon (M1/M2/M3) | `K8s Manager-1.0.0-arm64.dmg` | ~106 MB |
+| **macOS** | Intel | `K8s Manager-1.0.0-x64.dmg` | ~111 MB |
+| **Windows** | x64 | `K8s Manager-Setup-1.0.0-x64.exe` | ~82 MB |
+| **Windows** | ARM64 | `K8s Manager-Setup-1.0.0-arm64.exe` | ~84 MB |
+| **Windows** | Universal | `K8s Manager-Setup-1.0.0.exe` | ~166 MB |
+| **Linux** | x64 (AppImage) | `K8s Manager-1.0.0-x86_64.AppImage` | ~114 MB |
+| **Linux** | ARM64 (AppImage) | `K8s Manager-1.0.0-arm64.AppImage` | ~114 MB |
+| **Linux** | x64 (Debian/Ubuntu) | `K8s Manager-1.0.0-amd64.deb` | ~75 MB |
+| **Linux** | ARM64 (Debian/Ubuntu) | `K8s Manager-1.0.0-arm64.deb` | ~70 MB |
 
-### Windows & Linux
+---
 
-Windows 和 Linux 版本即将推出，敬请期待！
+### macOS 安装
 
-如果你急需其他平台版本，可以选择[从源码构建](#从源码构建)。
+#### 方式一：DMG 安装包（推荐）
+
+1. 下载适合你 Mac 架构的 DMG 文件
+2. 打开 DMG 文件
+3. 将 `K8s Manager` 拖拽到 `Applications` 文件夹
+4. 首次打开时，如果遇到安全提示：
+   ```bash
+   # 方法1：在系统偏好设置中允许
+   # 打开 系统偏好设置 > 安全性与隐私 > 点击 "仍要打开"
+
+   # 方法2：使用命令行移除隔离属性
+   xattr -cr /Applications/K8s\ Manager.app
+   ```
+
+#### 方式二：Homebrew (即将支持)
+
+```bash
+brew install --cask k8s-manager
+```
+
+---
+
+### Windows 安装
+
+#### NSIS 安装包
+
+1. 下载对应架构的 `.exe` 安装文件：
+   - **推荐**：下载 `K8s Manager-Setup-1.0.0.exe`（包含所有架构）
+   - 或根据你的系统选择 x64 或 ARM64 版本
+2. 双击运行安装程序
+3. 选择安装路径（可自定义）
+4. 安装完成后，从开始菜单或桌面快捷方式启动
+
+**注意事项**：
+- 首次运行时，Windows Defender 可能会显示安全警告，点击"更多信息"然后"仍要运行"
+- 如需卸载，可以通过"设置 > 应用 > 已安装的应用"进行卸载
+
+---
+
+### Linux 安装
+
+#### 方式一：AppImage（通用，推荐）
+
+AppImage 是独立可执行文件，无需安装，适用于所有 Linux 发行版。
+
+```bash
+# 1. 下载 AppImage 文件
+wget https://github.com/lirui001/k8s-env-manager/releases/download/v1.0.0/K8s\ Manager-1.0.0-x86_64.AppImage
+
+# 2. 添加执行权限
+chmod +x K8s\ Manager-1.0.0-x86_64.AppImage
+
+# 3. 运行应用
+./K8s\ Manager-1.0.0-x86_64.AppImage
+```
+
+**可选：集成到系统**
+```bash
+# 安装 AppImageLauncher (推荐)
+sudo apt install appimagelauncher  # Debian/Ubuntu
+sudo dnf install appimagelauncher  # Fedora
+
+# 或手动创建桌面快捷方式
+mkdir -p ~/.local/share/applications
+cat > ~/.local/share/applications/k8s-manager.desktop <<EOF
+[Desktop Entry]
+Name=K8s Manager
+Exec=/path/to/K8s Manager-1.0.0-x86_64.AppImage
+Icon=k8s-manager
+Type=Application
+Categories=Development;
+EOF
+```
+
+#### 方式二：Debian/Ubuntu (.deb)
+
+```bash
+# 1. 下载 .deb 文件
+wget https://github.com/lirui001/k8s-env-manager/releases/download/v1.0.0/K8s\ Manager-1.0.0-amd64.deb
+
+# 2. 安装
+sudo dpkg -i K8s\ Manager-1.0.0-amd64.deb
+
+# 3. 安装依赖（如果有缺失）
+sudo apt-get install -f
+
+# 4. 启动应用
+k8s-manager
+```
+
+#### 方式三：Arch Linux (AUR)
+
+```bash
+# 即将支持
+yay -S k8s-manager-bin
+```
+
+---
 
 ## 使用说明
 
@@ -355,8 +450,8 @@ k8s-env-manager/
 ## 路线图
 
 - [x] macOS 支持（Intel 和 Apple Silicon）
-- [ ] Windows 平台支持
-- [ ] Linux 平台支持（.deb、.rpm、AppImage）
+- [x] Windows 平台支持（x64 和 ARM64）
+- [x] Linux 平台支持（.deb 和 AppImage）
 - [ ] 配置文件加密存储
 - [ ] 多语言支持（英文、中文）
 - [ ] kubectl 命令补全
