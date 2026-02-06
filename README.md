@@ -62,11 +62,11 @@ K8s Manager Desktop 是一个专为 DevOps 工程师和运维人员设计的桌�
 - **日志过滤**：按类型、时间过滤日志
 
 ### 功能界面
-<img width="1198" height="801" alt="image" src="https://github.com/user-attachments/assets/9833e15e-628d-44b8-ac80-f0aeba64b04f" />
+<img width="2858" height="908" alt="image" src="https://github.com/user-attachments/assets/04ceb470-9480-40ca-adb3-7b5f8d5cd679" />
 
-![2fa40700-cfeb-4cb8-acc8-397e1fa05294](https://github.com/user-attachments/assets/c440c66e-e7cf-41d7-9399-5fb1fd87aace)
+<img width="2828" height="822" alt="image" src="https://github.com/user-attachments/assets/257a8488-adb2-4809-8d08-faaf7502dc4a" />
 
-![93a71eb5-bae8-4348-a0c2-1a51badf9eb9](https://github.com/user-attachments/assets/178ed4e7-1b18-4796-a506-eb5227026d86)
+<img width="2812" height="920" alt="image" src="https://github.com/user-attachments/assets/b5da29b9-feeb-4be3-8519-677290c032ef" />
 
 <img width="2790" height="1190" alt="image" src="https://github.com/user-attachments/assets/c7962b55-2b07-4975-94b8-32d81e63f74e" />
 
