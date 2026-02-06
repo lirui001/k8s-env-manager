@@ -61,6 +61,9 @@ K8s Manager Desktop 是一个专为 DevOps 工程师和运维人员设计的桌�
 - **实时更新**：日志实时更新，便于排查问题
 - **日志过滤**：按类型、时间过滤日志
 
+<img width="1198" height="801" alt="image" src="https://github.com/user-attachments/assets/9833e15e-628d-44b8-ac80-f0aeba64b04f" />
+
+
 ## 安装
 
 ### 快速下载
