@@ -68,6 +68,9 @@ K8s Manager Desktop 是一个专为 DevOps 工程师和运维人员设计的桌�
 
 ![93a71eb5-bae8-4348-a0c2-1a51badf9eb9](https://github.com/user-attachments/assets/178ed4e7-1b18-4796-a506-eb5227026d86)
 
+<img width="2790" height="1190" alt="image" src="https://github.com/user-attachments/assets/c7962b55-2b07-4975-94b8-32d81e63f74e" />
+
+
 
 
 
